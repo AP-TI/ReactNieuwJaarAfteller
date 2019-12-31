@@ -16,7 +16,6 @@ class Afteller extends Component {
     }
 
     tick = () => {
-        // this.setstate({ huidigeTijd: new Date() });
         this.setState({huidigeTijd: new Date()});
     }
 
