@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Preparations for running code
+
+run npm install --save material-ui@next in the terminal to download the necessary packages.
+
 ## Available Scripts
 
 In the project directory, you can run:
