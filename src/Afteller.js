@@ -38,7 +38,7 @@ class Afteller extends Component {
     }
 
     render = () => {
-        if ((this.state.nieuwjaar - this.state.huidigeTijd) <  10000) {
+        if ((this.state.nieuwjaar - this.state.huidigeTijd) <=  10000) {
             geluid.play();
             console.log(this.state.nieuwjaar - this.state.huidigeTijd)
         }
