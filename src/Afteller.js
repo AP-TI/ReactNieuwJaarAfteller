@@ -16,7 +16,7 @@ class Afteller extends Component {
     }
 
     tick = () => {
-        this.setState({huidigeTijd: new Date()});
+        this.setState({ huidigeTijd: new Date() });
     }
 
     milliSecondenNaarTijd = (s) => {
@@ -26,7 +26,7 @@ class Afteller extends Component {
         s = (s - secs) / 60;
         var mins = s % 60;
         var hrs = (s - mins) / 60;
-        return hrs + ':' + mins + ':' + secs;
+        return String(hrs).padStart(2,0) + ':' + String(mins).padStart(2,0) + ':' + String(secs).padStart(2,0);
     }
 
     componentDidMount = () => {
@@ -38,9 +38,12 @@ class Afteller extends Component {
     }
 
     render = () => {
-        if ((this.state.nieuwjaar - this.state.huidigeTijd) <=  10000) {
+        if ((this.state.nieuwjaar - this.state.huidigeTijd) <= 11000 && (this.state.nieuwjaar - this.state.huidigeTijd) >= 1) {
             geluid.play();
             console.log(this.state.nieuwjaar - this.state.huidigeTijd)
+        } else if ((this.state.nieuwjaar - this.state.huidigeTijd) <= 0) {
+            geluid.pause();
+            geluid.currentTime = 0;
         }
 
         return (
