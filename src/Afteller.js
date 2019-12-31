@@ -5,7 +5,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-const geluid = new Audio('./aftellen.wav');
+const geluid = new Audio('./aftellen.mp3');
 
 class Afteller extends Component {
     constructor() {
@@ -60,7 +60,7 @@ class Afteller extends Component {
         return (
             <div>
                 {(this.state.nieuwjaar - this.state.huidigeTijd) >= 0 ? null : this.state.vuurwerk}
-                <h1>{((this.state.nieuwjaar - this.state.huidigeTijd) >= 0 ? this.milliSecondenNaarTijd(this.state.nieuwjaar - this.state.huidigeTijd) : "Gelukkig Nieuwjaar!")}</h1>
+                <h1>{((this.state.nieuwjaar - this.state.huidigeTijd) >= 11000? this.milliSecondenNaarTijd(this.state.nieuwjaar - this.state.huidigeTijd) : ((this.state.nieuwjaar - this.state.huidigeTijd) <= 1000 ? "Gelukkig Nieuwjaar!" : <span className="schalen">{((this.state.nieuwjaar - this.state.huidigeTijd) - (this.state.nieuwjaar - this.state.huidigeTijd) % 1000)/ 1000}</span>))}</h1>
                 <div>
                     <Dialog
                         open={this.state.open}

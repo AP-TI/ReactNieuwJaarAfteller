@@ -3,6 +3,19 @@
   text-align: center;
 }
 
+.schalen{
+  animation: schaal 1s infinite;
+}
+
+@keyframes schaal {
+  from {
+    font-size: 1rem;
+  }
+  to {
+    font-size: 24rem;
+  }
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
